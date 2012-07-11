@@ -1,0 +1,7 @@
+./lib/Coro/Twiggy.pm
+./MANIFEST
+./Makefile.PL
+./README
+./Changes
+./t/01-use.t
+./t/02-requests.t
