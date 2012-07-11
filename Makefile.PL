@@ -19,4 +19,5 @@ WriteMakefile(
             bugtracker => 'https://github.com/unera/coro-twiggy/issues',
         }
     },
+    LICENSE => 'perl'
 );
