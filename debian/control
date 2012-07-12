@@ -15,7 +15,7 @@ Depends: ${perl:Depends}, ${misc:Depends}, ${shlibs:Depends},
  libanyevent-perl,
  libcoro-perl,
  twiggy
-Architecture: any
+Architecture: all
 Description: Coro interface for Twiggy
  The package provides Coro(utine) interface for Twiggy webserver,
  so You can use Twiggy as http backend of Coro applications.
