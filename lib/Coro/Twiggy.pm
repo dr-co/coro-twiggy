@@ -8,6 +8,7 @@ use Scalar::Util 'weaken';
 use Coro;
 use Data::Dumper;
 
+our $VERSION = '0.02';
 
 =head1 NAME
 
@@ -74,8 +75,6 @@ use constant DEFAULT_SERVICE => sub {
     ]
 };
 
-
-our $VERSION = '0.01';
 
 =head2 new
 
@@ -204,6 +203,11 @@ sub _app {
 
 
 1;
+
+=head1 VCS
+
+L<https://github.com/unera/coro-twiggy>
+
 =head1 AUTHOR
 
  Dmitry E. Oboukhov, <unera@debian.org>

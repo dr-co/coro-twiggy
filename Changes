@@ -3,4 +3,5 @@ Revision history for Perl extension Coro::Twiggy.
 0.01  Wed Jul 11 21:34:09 2012
 	- original version; created by h2xs 1.23 with options
 		-X -n Coro::Twiggy
-
+0.02  Thu Jul 12 11:41:29 MSK 2012
+	- add debian infrastructure
