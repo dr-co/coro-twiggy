@@ -1,0 +1,5 @@
+libcoro-twiggy-perl (0.01-1) unstable; urgency=low
+
+  * Initial release. (Closes: #XXXXXX)
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Thu, 12 Jul 2012 11:31:48 +0400
