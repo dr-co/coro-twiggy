@@ -6,7 +6,7 @@ use utf8;
 use open qw(:std :utf8);
 use lib qw(lib ../lib);
 
-use Test::More tests    => 39;
+use Test::More tests    => 45;
 use Encode qw(decode encode);
 
 
@@ -117,6 +117,18 @@ ok $env, 'PSGI application was called';
 my $delay = AnyEvent::now() - $started;
 cmp_ok $delay, '>=', 0.5, 'async process took more that 0.5 seconds';
 
+
+$server->register_service(sub { die "привет" });
+tcp_connect 'unix/', $socket, Coro::rouse_cb;
+$cs = unblock +(Coro::rouse_wait)[0];
+ok $cs, 'connected to server';
+print $cs "GET / HTTP/1.0\015\012\015\12";
+{ local $/; $resp = <$cs> }
+ok $resp, "response";
+ok eval { utf8::decode $resp }, 'response was decoded';
+like $resp, qr{^HTTP/1\.[01]\s+500}, 'code';
+like $resp, qr{привет at}, 'message';
+ok $env, 'PSGI application was called';
 
 }
 

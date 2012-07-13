@@ -8,7 +8,7 @@ use Scalar::Util 'weaken';
 use Coro;
 use Data::Dumper;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 NAME
 
@@ -156,7 +156,7 @@ sub _app {
                 my $res = shift @res;
 
                 if (my $err = $@) {
-                    utf8::downgrade($err) if utf8::is_utf8 $err;
+                    utf8::encode($err) if utf8::is_utf8 $err;
                     $cb->([ 500, [ 'Content-Type' => 'text/plain' ], [ $err ]]);
                     return;
                 }
