@@ -15,8 +15,9 @@ WriteMakefile(
        AUTHOR         => 'Dmitry E. Oboukhov <unera@debian.org>') : ()),
     META_MERGE => {
         resources => {
-            homepage => 'https://github.com/unera/coro-twiggy',
-            bugtracker => 'https://github.com/unera/coro-twiggy/issues',
+            homepage   => 'https://github.com/dr-co/coro-twiggy',
+            repository => 'https://github.com/dr-co/coro-twiggy',
+            bugtracker => 'https://github.com/dr-co/coro-twiggy/issues',
         }
     },
     LICENSE => 'perl'
